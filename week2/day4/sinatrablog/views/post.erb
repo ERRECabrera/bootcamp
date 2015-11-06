@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My Post - <%= @post.title %></title>
+</head>
+<body>
+	<div>
+		<span><h1><%= @post.title %></h1></span>
+		<span><h3><%= @post.author %></h3></span>
+		<span><p><%= @post.text %></p></span>
+		<span><%= @post.date.strftime("%H:%M:%S - %d/%m/%Y") %></span>
+		<span><%= "#{@post.category} Category" %></span>
+	</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My blog</title>
+</head>
+<body>
+	<div>
+		<span><p><h1>This is my personal blog</h1></p></span>
+		<span><form action="/new_post" method="get" /form><button type="submit">Create a new post</button></span>
+		<% @user_blog.posts.each_with_index do |post,index| %>
+			<span><h2><a href="<%= "/post/#{post.title.downcase.split(" ").join}" %>"><%= "#{index+1}#" %><%= post.title %></a></h2></span>
+			<span><%= "#{post.author} -- " %><%= post.date.strftime("%H:%M:%S - %d/%m/%Y") %></span>
+			<span><%= "#{post.category} Category"%></span>
+		<% end %>
+	</div>
+</body>
+</html>
