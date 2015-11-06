@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title><%= @user_default %>'s TodoList</title>
+	<link rel="stylesheet" type="text/css" href="/todo.css">
+</head>
+<body>
+	<div>
+		<form action="/create_task" method="post">
+			<input type="text" name="new_task" value="" placeholder="my task is!">
+			<input type="submit" value="Add New Task">
+		</form>
+	</div>
+</body>
+</html>

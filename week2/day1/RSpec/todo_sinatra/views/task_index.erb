@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title><%= @user_default %>'s TodoList</title>
+	<link rel="stylesheet" type="text/css" href="/todo.css">
+</head>
+<body>
+	<div><h1>Welcome <%= @user_default %> to the TodoList</h1></div>
+	<div><form action="/new_task" method="get"><button type="submit">Add New Task</button></form></div>
+	<div>
+		<ul>
+			<% @todo.tasks.each do |task|%>
+				<li>
+					<%= task.content %>
+					<form action="/complete" method="post">
+						<% state = "undone" if task.completed == false
+						state = "done" if task.completed == true %>
+						<input type="hidden" name="id" value=<%= task.id %>>
+						<input type="submit" name="state" value=<%= state %>>
+					</form>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</body>
+</html>
