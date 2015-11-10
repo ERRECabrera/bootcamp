@@ -1,0 +1,87 @@
+#header {
+	background-color: #FFF;
+	border-bottom: solid 2px #A7A7A7;
+	padding: 10px;
+	position: fixed;
+	top: 0px;
+	z-index: 10;
+	width: 100%;
+}
+.logoHeader {
+	width: 23px;
+	height: 24px;
+}
+.pin {
+	border-radius: 20px;
+}
+.button_header {
+	border-radius: 6px 0px 0px 6px;
+	background-color: #F5F5F5;
+}
+.searcher{
+	color: #A7A7A7;
+	font-size: 16px;
+	background-color: #E9E9E9;
+	line-height: 20px;
+	height: 38px;
+}
+body {
+	background-color: #E9E9E9;
+}
+#pinboard {
+	margin-top: 60px;
+}
+#photo_pin {
+	width: 100%;
+	border: solid 1px #A7A7A7;
+	border-radius: 7px;
+	color: black;
+	background-color: #FFF;
+	margin-top: 15px;
+	box-shadow: 2px 1px 2px rgba(0,0,0,0.1);
+}
+.photo_pinboard img {
+	border-radius: 7px 7px 0 0;
+	width: 100%;
+}
+.photo_pinboard img:hover {
+	opacity: 0.7;
+	cursor: zoom-in;
+}
+.description_photo {
+	padding: 10px 0 1px 10px;
+	border-bottom: solid 1px #A7A7A7;
+}
+.footer_photo {
+	padding: 10px 0 1px 10px;
+	border-radius: 0 0 7px 7px;
+}
+.footer_photo img {
+	width: 30px;
+	height: 30px;
+	border: solid 1px #A7A7A7;
+	border-radius: 3px;
+	margin-top: -18px;
+}
+.footer_photo span,
+.footer_photo p {
+	display: inline-block;
+	font-size: 10px;
+}
+#round_icons_bottom {
+	position: fixed;
+	bottom: 10px;
+	right: 20px;
+	z-index: 20;
+	width: 45px;
+}
+.icon_bottom {
+	background-color: transparent;
+	font-size: 40px;
+	color: white;
+}
+.icon_bottom span {
+	padding-top: 3px;
+	border-radius: 60px;
+	background-color: #A7A7A7;
+}
