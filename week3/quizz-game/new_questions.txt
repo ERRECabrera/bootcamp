@@ -1,0 +1,9 @@
+¿En qué lugar se ejecuta generalmente el código Javascript?-Servidor o Cliente-Cliente-1
+¿Para imprimir algo por consola se escribe?-console.log, console.print o console.write-console.log-1
+¿Con que lenguaje está hecho este juego?-Ruby, Javascript o C++-Javascript-1
+¿Qué se da de comer en MadridRB?-Canelones, ensalada o pizza-Pizza-3
+¿Cúantas islas tiene Canarias?-8, 5, 6 ó 7-7-5
+¿Quién es el mejor Hacker español?-Chema Alonso, Fernando Alonso o Paquirrín-Chema Alonso-2
+¿De que partido es líder Pablo Iglesias?-PSOE, PP o Podemos-Podemos-1
+Ruby ademas de una gema es..-Un grupo musical, un lenguaje de programación o un nuevo canal de Atremedia-Un lenguaje de programación-2
+Pregunta-Alternativas-Respuesta-Bonus
