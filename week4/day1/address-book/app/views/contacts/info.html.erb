@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Contac Info</h1>
+    <% @contact.attributes.each do |key, value| %>
+      <p>><%= key %>: "<%= value %>"</p>
+    <% end %>
+</body>
+</html>

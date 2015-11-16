@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <form action="/contacts" method="post">
+  <% classe = "no_fail" %>
+    <% if @fail_form == true %>
+      <p>Something is wrong with your..</p>
+      <% classe = "fail" %>
+    <% end %>
+    <div>
+      <label for="contact_name">Name</label>
+      <input class=<%= @atribute.name %> type="text" name="contact[name]" id="contact_name">      
+    </div>
+    <div>
+      <label for="contact_address">Address</label>
+      <textarea class=<%= @atribute.address %> name="contact[address]" id="contact_address"></textarea>
+    </div>    
+    <div>
+      <label for="contact_phone">Phone</label>
+      <input class=<%= @atribute.phoneNumber %> type="tel" name="contact[phoneNumber]" id="contact_phone">      
+    </div>
+    <div>
+      <label for="contact_email">Email</label>
+      <input class=<%= @atribute.email %> type="email" name="contact[email]" id="contact_email">    
+    </div>
+    <div>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <button type="submit">Add this contact</button>
+    </div>
+  </form>
+</body>
+</html>
