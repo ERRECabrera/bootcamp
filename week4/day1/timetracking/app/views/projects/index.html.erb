@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<ul>
+		<% @projects.each do |project| %>
+		<li><%= project.name %></li>
+			<% if project.created_at.today? %>
+				<li><%= project.created_at %></li>
+			<% else %>
+				<li><%= project.updated_at %></li>
+			<% end %>
+		<% end %>
+	</ul>
+</body>
+</html>
