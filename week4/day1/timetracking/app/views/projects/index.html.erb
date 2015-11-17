@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
 	<ul>
 		<% @projects.each do |project| %>
-		<li><%= project.name %></li>
-			<% if project.created_at.today? %>
-				<li><%= project.created_at %></li>
-			<% else %>
-				<li><%= project.updated_at %></li>
-			<% end %>
+  		<li><a href="/projects/<%= project.id %>">
+        <%= project.name %>&nbsp-&nbsp
+        <% if project.description.present? %>
+          <%= project.description %>
+        <% end %>
+      </a></li>			
 		<% end %>
 	</ul>
-</body>
-</html>
