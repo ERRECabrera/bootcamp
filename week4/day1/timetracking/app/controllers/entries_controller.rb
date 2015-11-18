@@ -30,6 +30,27 @@ class EntriesController < ApplicationController
     #redirect_to "index"
   end
 
+  def edit
+    @project = Project.find(params[:project_id])
+    @entry = @project.entries.find(params[:id])
+    #http://localhost:3000/projects/23/entries/10/edit
+  end
+
+  def update
+    #Find the project
+    @project = Project.find(params[:project_id])
+    #Find entry to update
+    @entry = @project.entries.find(params[:id])
+    #update the entry using update_attributes
+    #if ok redirect_to entries index
+    if @entry.update_attributes(entry_params)
+      redirect_to(controller: "entries", action: "index", project_id: @project.id)
+    #if wrong show the form again
+    else
+      render "edit"
+    end
+  end
+
   private
 
   def entry_params

@@ -3,7 +3,12 @@
 <ul>
   <li>
     <%= entry.hours %> hours - <%= entry.minutes %> minutes | Date: <%= entry.date.strftime("%d/%m/%Y") %>
+    <%= link_to("Edit", edit_project_entry_path(entry.project_id, entry.id)) %>    
   </li>
 </ul>
 <% end %>
-<a href="/projects/<%= @project.id %>"><p>to info of <%= @project.name %></p></a>
+<%= link_to("Go back to the list Projects", projects_path(@project)) %>
+<br>
+<%= link_to("#{@project.name} INFO", project_path(@project)) %>
+<br>
+<%= link_to("ADD a new entry", new_project_entry_path(@project)) %>
