@@ -1,4 +1,6 @@
 
   <h1><%= @project.name %></h1>
+  <a href="/projects/<%= @project.id %>/entries"><h4>hours worked in project..</h4></a>
   <p><%= @project.description %></p>
   <h5><%= @project.created_at %></h5>
+  <a href="/projects"><p>to list of projects</p></a>

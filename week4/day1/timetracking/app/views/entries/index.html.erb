@@ -1,0 +1,9 @@
+<p><%= @project.name %> - aprox. worked <%= @total_hours %> hours. </p>
+<% @entries.each do |entry| %>
+<ul>
+  <li>
+    <%= entry.hours %> hours - <%= entry.minutes %> minutes | Date: <%= entry.date.strftime("%d/%m/%Y") %>
+  </li>
+</ul>
+<a href="/projects/<%= @project.id %>"><p>to info of <%= @project.name %></p></a>
+<% end %>

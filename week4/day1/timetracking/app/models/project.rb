@@ -16,4 +16,15 @@ class Project < ActiveRecord::Base
   def self.first_updated(limit)
     order("updated_at ASC").limit(limit)
   end
+
+  def total_hours_in_month(month_number,year)
+    project_date = DateTime.new(year,month_number)
+    date_start = project_date.at_beginning_of_month
+    date_end = project_date.end_of_month
+    entries = self.entries.where(date: date_start..date_end)
+    hours = entries.reduce(0.0) do |sum,entry|
+      sum+(entry.hours*60)+entry.minutes
+    end
+    (hours/60).round
+  end
 end
