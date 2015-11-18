@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
   get "/" => "site#home" #"controlador"#"acción"
   get "/contact" => "site#contact"
+
+  resources :projects, only: [:index, :show] do #crea todas las rutas para estos modelos
+    resources :entries, only: [:index, :new, :create]
+  end
+
+
+=begin
   get "/projects" => "projects#index"
   get "/projects/:id" => "projects#show"
-  get "/projects/:project_id/entries" => "entries#index" 
+  get "/projects/:project_id/entries" => "entries#index"
+  get "/projects/:project_id/entries/new" => "entries#new"
+=end
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
