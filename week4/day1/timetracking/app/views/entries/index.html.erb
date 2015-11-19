@@ -2,8 +2,10 @@
 <% @entries.each do |entry| %>
 <ul>
   <li>
-    <%= entry.hours %> hours - <%= entry.minutes %> minutes | Date: <%= entry.date.strftime("%d/%m/%Y") %>
-    <%= link_to("Edit", edit_project_entry_path(entry.project_id, entry.id)) %>    
+    <%= entry.hours %> hours - <%= entry.minutes %> minutes | Date: <%= entry.date.strftime("%d/%m/%Y") %> - 
+    <%= link_to("Edit", edit_project_entry_path(entry.project_id, entry.id)) %> - 
+    <%= link_to("Delete", project_entry_path(entry.project_id, entry.id), method: :delete, data: {confirm: "Are you sure?"}) %>
+ 
   </li>
 </ul>
 <% end %>
