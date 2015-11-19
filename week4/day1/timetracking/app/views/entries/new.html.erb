@@ -1,20 +1,2 @@
-<% if @entry.errors.any? %>
-  <% @entry.errors.full_messages.each do |error| %>
-    <ul>
-      <li><%= error %></li>
-    </ul>
-  <% end %>
-<% end %>
-<%= form_for [@project, @entry] do |f| %>
-  <%= f.label :hours %>
-  <%= f.text_field :hours %>
-  <br>
-  <%= f.label :minutes %>
-  <%= f.text_field :minutes %>
-  <br>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
-  <br>
-  <%= f.submit "Save" %>
-<% end %>
-<%= link_to("CANCEL", project_entries_path(@project)) %>
+<h2>Creating a new entry in <%= @project.name %></h2>
+<%= render "form" %>

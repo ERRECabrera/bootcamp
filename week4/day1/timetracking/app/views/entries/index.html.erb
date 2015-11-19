@@ -1,4 +1,5 @@
-<p><%= @project.name %> - aprox. worked <%= @total_hours %> hours. </p>
+<%= flash_message %>
+<p><%= @project.name %> - aprox. worked <%= project_total_hours(@project,@date) %> hours. </p>
 <% @entries.each do |entry| %>
 <ul>
   <li>
@@ -9,8 +10,6 @@
   </li>
 </ul>
 <% end %>
-<%= link_to("Go back to the list Projects", projects_path(@project)) %>
-<br>
-<%= link_to("#{@project.name} INFO", project_path(@project)) %>
-<br>
+<%= link_to("GO BACK to the list Projects", projects_path(@project)) %> / 
+<%= link_to("#{@project.name} INFO", project_path(@project)) %> / 
 <%= link_to("ADD a new entry", new_project_entry_path(@project)) %>

@@ -1,9 +1,9 @@
 class EntriesController < ApplicationController
   def index
-    date = Date.current
+    @date = Date.current
     @project = Project.find(params[:project_id])
-    @entries = @project.entries.where(date: date.beginning_of_month..date.end_of_month)
-    @total_hours = @project.total_hours_in_month(date.month,date.year)
+    @entries = @project.entries.where(date: @date.beginning_of_month..@date.end_of_month)
+    #@total_hours = @project.total_hours_in_month(@date.month,@date.year)
     render "index"
     #@entries = Entry.where(project_id: params[:id])
   end
@@ -22,9 +22,11 @@ class EntriesController < ApplicationController
     @project = Project.find(params[:project_id])
     @entry = @project.entries.new(entry_params)
     if @entry.save
+      flash[:notice] = "Entry created successfully"
       redirect_to action: "index", controller: "entries", project_id: @project.id 
       #esto se pasa como params
     else
+      flash[:alert] = "Entry was not created, why?:"
       render "new"
     end
     #redirect_to "index"
@@ -44,9 +46,11 @@ class EntriesController < ApplicationController
     #update the entry using update_attributes
     #if ok redirect_to entries index
     if @entry.update_attributes(entry_params)
+      flash[:notice] = "Entry created successfully"
       redirect_to(controller: "entries", action: "index", project_id: @project.id)
     #if wrong show the form again
     else
+      flash[:alert] = "Entry was not created, why?:"
       render "edit"
     end
   end
