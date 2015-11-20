@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resource :site, only: [:index]
+  get "/" => "site#index"
+  #resources :site, only: [:index]
   resources :concerts, only: [:index, :show, :new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
