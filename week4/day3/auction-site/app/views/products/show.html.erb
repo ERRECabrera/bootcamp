@@ -1,0 +1,11 @@
+<h2><%= @product.title %></h2>
+<hr>
+<ul>
+    <li><%= @product.description %></li>
+    <li><%= @product.deadline %></li>
+</ul>
+<%= link_to("to product list", products_path()) %> / 
+<%= link_to("to user profile", user_path(@user.id)) %>
+<br>
+<h2>Make a bid!</h2>
+<%= render "bidform" %>

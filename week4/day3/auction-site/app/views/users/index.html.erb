@@ -1,0 +1,9 @@
+<h1>USERS LIST</h1>
+<% @users.each do |user| %>
+  <ul>
+    <li><%= "#{user.name} - #{user.email}" %></li>
+    <%= link_to("My profile", user_path(user.id)) %>
+  </ul>
+<% end %>
+<%= link_to("Add User", new_user_path()) %> / 
+<%= link_to("Product Market", products_path()) %>

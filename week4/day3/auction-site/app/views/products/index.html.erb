@@ -1,0 +1,7 @@
+<h1>PRODUCT LIST OF <%= @user.name.upcase %></h1>
+<hr>
+<ul>
+  <% @products.each do |product| %>
+      <li><%= link_to(product.title,user_product_path(@user.id,product.id)) %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,13 @@
+<% if @new_bid.errors.any? %>
+  <% @new_bid.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+<% end %>
+<%= form_for [@user, @product, @new_bid] do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br>
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+  <%= f.submit "SAVE!" %>
+<% end %>

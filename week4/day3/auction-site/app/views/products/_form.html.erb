@@ -1,0 +1,16 @@
+<% if @new_product.errors.any? %>
+  <% @new_product.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+<% end %>
+<%= form_for [@user, @new_product] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <br>
+  <%= f.label :deadline %>
+  <%= f.date_field :deadline %>
+  <%= f.submit "SAVE!" %>
+<% end %>

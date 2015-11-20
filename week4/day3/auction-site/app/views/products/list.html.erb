@@ -1,0 +1,12 @@
+<h1>PRODUCT LIST</h1>
+<hr>
+<ul>
+  <% @products.each do |product| %>
+      <li>
+        <%= link_to(product.title,user_product_path(product.user_id,product.id)) %> - 
+        <%= product.description %> - 
+        <%= product.deadline.strftime("%d/%m/%Y") %>
+      </li>
+  <% end %>
+</ul>
+<%= link_to("Login", users_path()) %>
