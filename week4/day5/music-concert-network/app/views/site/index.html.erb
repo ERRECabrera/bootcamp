@@ -1,1 +1,9 @@
-<p>Esto es el index</p>
+<% if @today_concerts.any? %>
+  <span>
+    <%= table_generator_to_show_concert(@today_concerts) %>
+  </span>
+<% else %>
+  <span>
+    <p>No concerts founded today.</p>
+  </span>
+<% end %>
