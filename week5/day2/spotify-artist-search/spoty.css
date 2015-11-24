@@ -1,0 +1,11 @@
+.js-searcher {
+  margin-top: 20px;
+}
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+.table {
+  margin: 0 auto;
+  margin-top: 20px;
+  width:50%;
+}

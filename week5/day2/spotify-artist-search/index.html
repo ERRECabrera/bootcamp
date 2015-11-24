@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spotify Artist Search</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"/>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src="./spoty.js"></script>
+  <link rel="stylesheet" type="text/css" href="./spoty.css"/>
+</head>
+<body>
+  <div class="container">
+    <header class="row text-center">
+      <h1>This is the header</h1>
+      <hr>
+    </header>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 text-center">
+        <form class="js-searcher form-inline">
+          <label for="artist">Artist search form</label>
+          <input type="text" class="form-control" id="name_artist" name="artist" placeholder="Artist's name"/>
+          <input type="submit" class="btn btn-primary"/>
+        </form>
+        <table class="table table-condensed js-table-artist">
+          <thead>
+          </thead>
+          <tbody id="list">
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    <footer class="row text-center">
+      <hr>
+      <p>this is the footer</p>
+    </footer>
+  </div>
+</body>
+</html>
