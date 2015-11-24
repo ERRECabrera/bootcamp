@@ -9,3 +9,19 @@
   margin-top: 20px;
   width:50%;
 }
+.album {
+  display: inline-block;
+  width: 160px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.album img {
+  margin: 0 auto;
+}
+.audio {
+  width: 100%;
+}
+ol {
+  width: 50%;
+  margin: 0 auto;
+}
