@@ -1,0 +1,8 @@
+<header>
+  <% if current_user %>
+    <strong>Name: </strong><%= "#{current_user.name} "%> | <strong>Email: </strong><%= "#{current_user.email}" %>
+    <%= link_to("LOG OUT", destroy_user_session_path, method: 'delete', class: "btn btn-danger") %>
+  <% else %> 
+    <%= link_to("LOG IN", new_user_session_path, method: 'get', class: "btn btn-success") %>
+  <% end %>
+</header>
