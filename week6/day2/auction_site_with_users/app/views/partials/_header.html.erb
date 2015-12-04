@@ -1,0 +1,7 @@
+<h1>fake-bay.com</h1>
+<% if current_user %>
+  <a href="<%= user_path(current_user.id)%>"><%= current_user.name %></a> <button id="log_out">Log out</button>
+  <% link_to('Log out', logout_path, method: :delete) %>
+<% else %>
+  <%= link_to('Log in', login_path) %>
+<% end %>

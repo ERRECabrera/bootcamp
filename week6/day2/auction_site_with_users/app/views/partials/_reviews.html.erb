@@ -1,0 +1,10 @@
+<% if current_user %>
+  <form action="<%= reviews_path %>" method="post">
+    <p>Description</p>
+    <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts=" />
+    <input type="text" name="review[description]">
+    <input type="hidden" name="review[user_id]" value="<%= current_user.id %>">
+    <input type="hidden" name="review[product_id]" value="<%= @product.id %>">
+    <input type="submit">
+  </form>
+<% end %>

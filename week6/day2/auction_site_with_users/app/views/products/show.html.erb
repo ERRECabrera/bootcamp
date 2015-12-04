@@ -1,0 +1,50 @@
+<h2><%= @product.title %></h2>
+<strong>Seller: <%= @user.name %></strong>
+<em>Deadline date: <%= format_date(@product.deadline) %></em>
+
+<% if(@product.active_bid?) %>
+  <h3>I want the product!</h3>
+
+  <%= flash_message %>
+
+  <form action="/users/<%= @user.id %>/products/<%= @product.id %>/bids" method="post">
+    <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts=" />
+    <label for="email">E-Mail address</label>
+    <br>
+    <input type="email" name="[bid]email" id="email" required>
+    <br>
+    <label for="bid">Bid</label>
+    <br>
+    <input type="numeric" name="[bid]amount" id="bid" required>
+    <br>
+    <button type="submit">Send my bid</button>
+  </form>
+
+  <% if(@bids.any?) %>
+    <h3>List of bids</h3>
+    <ul>
+      <% @bids.each do |bid| %>
+        <li><%= get_user_name(bid.user_id) %> <%= format_price(bid.amount) %> €</li>
+      <% end %>
+    </ul>
+  <% end %>
+<% else %>
+  <h3>The auction has finished</h3>
+  <p>The winner was: <%= @winner_user.name %> paying <%= format_price(@winner_bid.amount) %> €</p>
+<% end %>
+
+<% if @reviews.any? %>
+  <% @reviews.each do |review| %>
+    <ul class="js-reviews">
+      <li>
+      "<%= review.description %>" - <em><%= user_name(review.user_id) %></em>
+      <% if current_user.id == review.user_id %>
+        <a href=""><img class="js-edit" data-id="<%= review.id %>" src="http://icons.iconseeker.com/png/fullsize/clipper-system-2/text-edit-2.png" style="height: 15px"> <img class="js-delete" data-id="<%= review.id %>" src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Close.png" style="height: 15px"></a>
+      <% end %>
+      </li>
+    </ul>
+  <% end %>
+<% end %>
+
+<hr>
+<%= render 'partials/reviews' %>

@@ -1,0 +1,11 @@
+<p><%= link_to('Users', users_path) %></p>
+<% if(@products.any?) %>
+  <% @products.each do |product| %>
+    <div style="float: left; margin: 0 50px 70px 0">
+      <h2><%= link_to(product.title, user_product_path(product.user_id, product)) %></h2>
+      <p><%= product.description %></p>
+      <p><strong>Dead line: <%= format_date(product.deadline) %></strong></p>
+      <em>Owner: <%= product.user.name %></em>
+    </div>
+  <% end %>
+<% end %>
